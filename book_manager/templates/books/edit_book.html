@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editează Cartea</title>
+</head>
+<body>
+    <h1>Editează Cartea</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvează Modificările</button>
+    </form>
+    <a href="{% url 'book_list' %}">Înapoi la lista de cărți</a>
+</body>
+</html>

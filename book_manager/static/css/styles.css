@@ -1,0 +1,99 @@
+
+
+button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+.login-page  {
+  background-image: url('images/pic2.png');
+  background-size: cover;
+  color: #333;
+}
+
+.login-page .login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  padding: 20px;
+  background: transparent;
+  border-radius: 5px;
+}
+
+.login-page .login-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.login-page .logo {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+}
+
+
+.register-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.register-background {
+  background: url('images/new.png') no-repeat center center;
+  background-size: cover;
+
+.register-page .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.register-page .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.register-page .register-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+.register-page input[type='text'],
+.register-page input[type='email'],
+.register-page input[type='password'] {
+  width: calc(100% - 20px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+

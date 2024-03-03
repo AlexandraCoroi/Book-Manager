@@ -1,0 +1,9 @@
+
+{% block content %}
+  <h2>Recomandări de cărți</h2>
+  <ul>
+    {% for book in recommendations %}
+      <li>{{ book.title }} - Rating: {{ book.rating }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
