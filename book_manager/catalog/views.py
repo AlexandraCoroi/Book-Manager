@@ -4,8 +4,7 @@ from django.contrib.auth.decorators import login_required
 from catalog.models import Book
 from users.forms import BookForm
 from users.forms import RegisterForm
-from recommendations.models import BookRec
-from recommendations.models import books_data, books_df
+
 
 
 
@@ -66,10 +65,8 @@ def delete_book(request, pk):
     return redirect('book_list')
 
 
-def book_recommendations(request):
 
-    recommender = BookRec(books_df)
-    recommendations = recommender.get_top_books(num=3)
 
-    return render(request, 'books/book_recommendations.html', {'recommendations': recommendations})
+def goodbye_view(request):
+    return render(request, 'books/goodbye.html')
 

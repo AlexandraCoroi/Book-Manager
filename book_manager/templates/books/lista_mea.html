@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'books/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/listamea.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"  crossorigin="anonymous">
 
-    <title>Lista Mea</title>
+    <title>My List</title>
     <style>
         .titlu-carte { cursor: pointer; }
         .titlu-carte:hover { text-decoration: underline; }
@@ -16,21 +16,23 @@
     </style>
 </head>
 <body class="body-background">
+    <div class="book-container">
+        <ul class="book-list">
 
-    <h1> Lista Mea </h1>
+    <h1> My List </h1>
 
-    <ul class="book-list">
+
         {% for book in books %}
             <li>
                 <span class="titlu-carte" onclick="toggleDetails('detalii-{{ book.id }}')">
-                    {{ book.titlu }}
+                    {{ book.title }}
                 </span>
                 <div id="detalii-{{ book.id }}" class="detalii-carte">
-                    <p>Autor: {{ book.autor }}</p>
-                    <p>Gen: {{ book.gen }}</p>
-                    <p>Rezumat: {{ book.rezumat }}</p>
-                    <p>Adăugată la: {{ book.data_adaugare }}</p>
-                    <p class="book-detail">Descrierea cărții</p>
+                    <p>Author: {{ book.author }}</p>
+                    <p>Genre: {{ book.genre }}</p>
+                    <p>Summary: {{ book.summary }}</p>
+<!--                    <p>Added on: {{ book.added_on }}</p>-->
+
 
                     <a href="{% url 'edit_book' book.id %}">Editează</a>
                     <a href="{% url 'delete_book' book.id %}">Șterge</a>
@@ -40,7 +42,7 @@
             <li>Nu există cărți adăugate încă.</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'add_book' %}" class="add-book-button">Adaugă o Carte</a>
+    <a href="{% url 'add_book' %}" class="add-book-button">Add book</a>
 
 
     <script>
@@ -50,4 +52,5 @@
         }
     </script>
 </body>
+
 </html>

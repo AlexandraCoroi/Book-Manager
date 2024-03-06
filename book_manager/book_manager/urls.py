@@ -16,13 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+import recommendations.views
 from catalog.views import home_view
 from catalog.views import register_view
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView
 from catalog import views
 from users.views.activation import activate_user
-
+from recommendations.views import book_recommendations_view
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,8 +38,10 @@ urlpatterns = [
     path('delete/<int:pk>/', views.delete_book, name='delete_book'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
+    path('logout/', views.goodbye_view, name='logout'),
     path('register/', register_view, name='register'),
-    path('recommendations/',  views.book_recommendations, name='book-recommendations'),
+    path('recommendations/',  recommendations.views.book_recommendations_view, name='book-recommendations'),
     path('activate/<str:token>/', activate_user, name='activate'),
-]
+    path('goodbye/', views.goodbye_view, name='goodbye'),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

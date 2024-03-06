@@ -2,8 +2,6 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect, reverse
 
 
-
-
 from users.forms import RegisterForm
 AuthUserModel = get_user_model()
 

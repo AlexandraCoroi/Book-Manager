@@ -6,19 +6,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adaugă o carte nouă</title>
-    <link rel="stylesheet" href="{% static 'books/styles.css' %}">
+    <title>Add a new book</title>
+    <link rel="stylesheet" href="{% static 'css/addbook.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body class="add-book-page">
     <div class="container my-4">
-        <h1 class="text-center mb-4">Adaugă o carte nouă</h1>
+        <h1 class="text-center mb-4">Add a new book</h1>
         <form method="post" class="book-form">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Salvează Cartea</button>
-                <a href="{% url 'book_list' %}" class="btn btn-secondary">Înapoi la lista de cărți</a>
+                <button type="submit" class="btn btn-primary">Save book</button>
+                <a href="{% url 'book_list' %}" class="btn btn-secondary">Back to Booklist</a>
             </div>
         </form>
     </div>

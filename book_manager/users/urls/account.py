@@ -6,7 +6,7 @@ app_name = 'account'
 
 urlpatterns = [
     path('login/', auth_views.LoginView.as_view(
-        template_name='users/login.html',
+        template_name='books/login.html',
         redirect_authenticated_user=True
     )),
     path('', include('django.contrib.auth.urls')),

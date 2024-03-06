@@ -1,7 +1,7 @@
 
 
 button {
-  background-color: #5cb85c;
+  background-color: #28a745;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -45,55 +45,5 @@ button:hover {
   width: 100px;
   height: auto;
 }
-
-
-.register-page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-}
-
-.register-background {
-  background: url('images/new.png') no-repeat center center;
-  background-size: cover;
-
-.register-page .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.register-page .form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-}
-
-.register-page .register-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-
-}
-
-.register-page input[type='text'],
-.register-page input[type='email'],
-.register-page input[type='password'] {
-  width: calc(100% - 20px);
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-
-
-
-
-
 
 

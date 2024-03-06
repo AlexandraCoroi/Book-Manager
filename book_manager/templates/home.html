@@ -14,7 +14,7 @@
     <div class="container">
         <div class="text-container">
             <header>
-                <h1 class="welcome-title">Welcome to BookSphere!</h1>
+                <h1 class="welcome-title">Welcome to BookZone!</h1>
             </header>
         </div>
     </div>
@@ -22,31 +22,34 @@
     <main>
         <section class="intro">
             <div class="mt-5">
-             {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
                 <div class="auth-buttons text-center">
                     <a href="{% url 'book_list' %}" class="btn btn-success">My List</a>
                     <a href="{% url 'add_book' %}" class="btn btn-success">Add Book</a>
-                    <a href="{% url 'logout' %}" class="btn btn-success">Logout</a>
+                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
                 </div>
-            {% else %}
+                {% else %}
                 <div class="login-button text-center">
                     <a href="{% url 'login' %}" class="btn btn-success">Login</a>
                 </div>
-            {% endif %}
-                </div>
+                {% endif %}
+            </div>
         </section>
 
         <section class="hero">
             <div class="hero-content">
                 <h1>A reader lives a thousand lives.</h1>
                 <p>Discover new books.</p>
-                <a href="{% url 'book-recommendations' %}" class="btn btn-primary">See our recommendations</a>
+                <a href="{% url 'book-recommendations' %}" class="btn btn-primary recommendations-button">See our recommendations</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; {{ year }} BookSphere. All rights reserved.</p>
+        <p>&copy; {{ year }} BookZone. All rights reserved.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>

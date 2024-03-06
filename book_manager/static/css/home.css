@@ -76,7 +76,11 @@ h1.welcome-title {
   margin-top: 50px;
 }
 
-
+.hero-content p {
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 30px;
+}
 
 footer {
   text-align: center;
@@ -97,10 +101,5 @@ footer p {
 
   nav ul li {
     padding: 10px;
-  }
-
-  .hero-content {
-    height: auto;
-    padding: 50px 20px;
   }
 

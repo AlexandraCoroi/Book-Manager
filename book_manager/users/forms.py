@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth import  get_user_model
+from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import password_validators_help_text_html
 from catalog.models import Book
 
@@ -33,7 +33,8 @@ class RegisterForm(forms.ModelForm):
 
         return super().save(commit)
 
+
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ['titlu', 'autor', 'gen', 'rezumat']
+        fields = ['title', 'author', 'genre', 'summary', 'rating']

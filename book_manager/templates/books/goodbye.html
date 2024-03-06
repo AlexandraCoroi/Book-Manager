@@ -1,0 +1,12 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Goodbye</title>
+    <link href="{% static 'css/goodbye.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>Hope to see you again!</h1>
+    <a href="{% url 'login' %}">Login Again</a>
+</body>
+</html>

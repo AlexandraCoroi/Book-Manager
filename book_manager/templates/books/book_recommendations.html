@@ -1,9 +1,65 @@
-
+{% load static %}
 {% block content %}
-  <h2>Recomandări de cărți</h2>
-  <ul>
-    {% for book in recommendations %}
-      <li>{{ book.title }} - Rating: {{ book.rating }}</li>
-    {% endfor %}
-  </ul>
+<link rel="stylesheet" href="{% static 'css/recommendations.css' %}">
+
+<div class="book-recommendations">
+
+
+    <section class="recently-added">
+        <h2>New Releases</h2>
+        <div class="book-list" style="display: flex; justify-content: flex-start; align-items: center; margin-right: 20px; margin-bottom: 20px;">
+            {% for book in recently_added %}
+            <div class="book">
+                <img src="{{ book.cover_image.url }}" alt="{{ book.title }} cover">
+                <div class="book-info">
+                    <h3>{{ book.title }}</h3>
+                    <p>Author: {{ book.author }}</p>
+                    <p>Genre: {{ book.genre }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p>No recently added books to show.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <section class="most-read">
+        <h2>Most Read Books</h2>
+        <div class="book-list" style="display: flex; justify-content: flex-start; align-items: center; margin-right: 20px; margin-bottom: 20px;">
+            {% for book in most_read %}
+            <div class="book">
+                <img src="{{ book.cover_image.url }}" alt="{{ book.title }} cover">
+                <div class="book-info">
+                    <h3>{{ book.title }}</h3>
+                    <p>Author: {{ book.author }}</p>
+                    <p>Genre: {{ book.genre }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p>No most read books to show.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <section class="all-time-favorites">
+        <h2>All Time Favorites</h2>
+        <div class="book-list" style="display: flex; justify-content: flex-start; align-items: center; margin-right: 20px; margin-bottom: 20px;">
+            {% for book in all_time_favorites %}
+            <div class="book">
+                <img src="{{ book.cover_image.url }}" alt="{{ book.title }} cover">
+                <div class="book-info">
+                    <h3>{{ book.title }}</h3>
+                    <p>Author: {{ book.author }}</p>
+                    <p>Genre: {{ book.genre }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p>No all-time favorites to show.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
 {% endblock %}
